@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WA.Common\WA.Common.csproj" />
+    <ProjectReference Include="..\WA.Contracts\WA.Contracts.csproj" />
+    <ProjectReference Include="..\WA.Infrastructure\WA.Infrastructure.csproj" />
+    <ProjectReference Include="..\WA.Services\WA.Services.csproj" />
+  </ItemGroup>
+
+</Project>
