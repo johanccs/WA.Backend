@@ -16,14 +16,16 @@ namespace WA.Services
         #region Private Readonly Fields
 
         private readonly ApplicationDbContext _dbContext;
+        private readonly IProjectEmployeeMapping _projectMapping;
 
         #endregion
 
         #region Constructor
 
-        public ProjectService(ApplicationDbContext dbContext)
+        public ProjectService(ApplicationDbContext dbContext, IProjectEmployeeMapping projectMapping)
         {
             _dbContext = dbContext;
+            _projectMapping = projectMapping;
         }
 
         #endregion
@@ -50,7 +52,7 @@ namespace WA.Services
         {
             var unmappedProjects = await GetInternalList();
 
-            return ProjectEmployeeMapping.Map(unmappedProjects.ToList());
+            return _projectMapping.Map(unmappedProjects.ToList());
             
         }
 

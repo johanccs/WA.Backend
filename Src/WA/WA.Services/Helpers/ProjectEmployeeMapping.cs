@@ -1,21 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using WA.Contracts;
 using WA.Data.Dtos;
 using WA.Data.Entities;
 
 namespace WA.Data.Helpers
 {
-    public static class ProjectEmployeeMapping
+    public class ProjectEmployeeMapping: IProjectEmployeeMapping
     {
-        private static int id;
-        private static string projectName;
-        private static decimal cost;
-        private static DateTime? startDate;
-        private static DateTime? endDate;
-        private static string empNames;
+        #region Readonly Fields
 
-        public static IEnumerable<ProjectEmployeeDto> Map(List<ProjectEmployeeEntity> unmapped)
+        private readonly IRecalcProjectCost<EmployeeEntity> _recalcProjectCost;
+
+        #endregion
+
+        #region Fields
+
+        private int id;
+        private string projectName;
+        private decimal cost;
+        private DateTime? startDate;
+        private DateTime? endDate;
+        private string empNames;
+
+        #endregion
+
+        public ProjectEmployeeMapping(IRecalcProjectCost<EmployeeEntity> recalcProjectCost)
+        {
+            _recalcProjectCost = recalcProjectCost;
+        }
+
+        public List<ProjectEmployeeDto> Map(List<ProjectEmployeeEntity> unmapped)
         {
             var mappedProjectEmployees = new List<ProjectEmployeeDto>();
             var groupedProjects = unmapped.GroupBy(x => x.ProjectID).ToList();
@@ -28,7 +44,7 @@ namespace WA.Data.Helpers
                     {
                         id = p.ProjectID;
                         projectName = p.Project.Name;
-                        cost = p.Project.Cost;
+                        cost = _recalcProjectCost.Calculate(p.Project.Cost, p.Employee);
                         startDate = p.Project.Startdate;
                         endDate = p.Project.Enddate;
                         empNames += (p.Employee.Name + " " + p.Employee.Surname + ", ");
@@ -54,7 +70,7 @@ namespace WA.Data.Helpers
          
         }
 
-        private static void ClearFields()
+        private void ClearFields()
         {
             id = 0;
             projectName = string.Empty;

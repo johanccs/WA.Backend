@@ -16,8 +16,4 @@
     <ProjectReference Include="..\WA.Contracts\WA.Contracts.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Helpers\" />
-  </ItemGroup>
-
 </Project>
