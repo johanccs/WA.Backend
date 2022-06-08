@@ -5,14 +5,14 @@ using Xunit;
 
 namespace WA.Tests.Services
 {
-    public class ProductServiceTests
+    public class ProjectServiceTests
     {
         ApplicationDbContext _dbContext;
        
 
-        public ProductServiceTests()
+        public ProjectServiceTests()
         {
-            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseInMemoryDatabase("MockBETS")
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseInMemoryDatabase("MockWA")
                 .Options;
 
             _dbContext = new ApplicationDbContext(options);

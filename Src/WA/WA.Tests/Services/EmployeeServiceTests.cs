@@ -6,11 +6,11 @@ using Xunit;
 namespace BE.Tests.Services
 {
 
-    public class AuthServiceTests
+    public class EmployeeServiceTests
     {
         ApplicationDbContext _dbContext;
        
-        public AuthServiceTests()
+        public EmployeeServiceTests()
         {
             var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseInMemoryDatabase("MockBETS")
                 .Options;

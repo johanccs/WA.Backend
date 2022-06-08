@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using WA.Contracts;
 using WA.Data.Dtos;
@@ -31,6 +32,22 @@ namespace WA.Api.Controllers
         #endregion
 
         #region Methods
+
+        [HttpGet()]
+        [ResponseCache(Duration = 120)]
+        public async Task<IActionResult> GetProjects()
+        {
+            try
+            {
+                var result = await _projectService.GetAll();
+
+                return Ok(result.ToList());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
         [HttpPost()]
         [ResponseCache(Duration = 120)]

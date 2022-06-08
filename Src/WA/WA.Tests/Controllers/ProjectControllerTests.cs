@@ -4,11 +4,11 @@ using Xunit;
 
 namespace WA.Tests.Controllers
 {
-    public class ProductControllerTests
+    public class ProjectControllerTests
     {
         ApplicationDbContext _dbContext;
 
-        public ProductControllerTests()
+        public ProjectControllerTests()
         {
         }
 

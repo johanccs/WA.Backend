@@ -1,10 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using WA.Contracts;
 using WA.Data.DbCtx;
+using WA.Data.Dtos;
 using WA.Data.Entities;
+using WA.Data.Helpers;
 
 namespace WA.Services
 {
@@ -43,10 +46,27 @@ namespace WA.Services
             }
         }
 
-        public async Task<IEnumerable<ProjectEntity>> GetAll()
+        public async Task<IEnumerable<ProjectEmployeeDto>> GetAll()
         {
-            return await _dbContext.Project.AsNoTracking().ToListAsync();
+            var unmappedProjects = await GetInternalList();
+
+            return ProjectEmployeeMapping.Map(unmappedProjects.ToList());
+            
         }
+
+        #endregion
+
+        #region Private Methods
+
+        private async Task<IEnumerable<ProjectEmployeeEntity>>GetInternalList()
+        {
+
+            var result = await _dbContext.ProjectEmployee.Include(x => x.Employee).Include(x => x.Project).ToListAsync();
+
+            return result;
+        }
+
+        
 
         #endregion
     }

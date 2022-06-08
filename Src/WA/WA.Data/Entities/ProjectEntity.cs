@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WA.Data.Entities
 {
@@ -7,7 +8,9 @@ namespace WA.Data.Entities
         public int id { get; set; }
         public string Name { get; set; }
         public DateTime Startdate { get; set; }
-        public DateTime Enddate { get; set; }
+        public DateTime? Enddate { get; set; }
+
+        [Column(TypeName = "decimal(18,4")]
         public decimal Cost { get; set; }
 
     }
