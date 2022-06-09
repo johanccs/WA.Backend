@@ -1,10 +1,10 @@
 ﻿using System;
+using WA.Data.Base;
 
 namespace WA.Data.Dtos
 {
-    public class ProjectEmployeeDto
+    public class ProjectEmployeeDto: BaseEntity
     {
-        public int Id { get; set; }
         public string ProjectName { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime? EndDate { get; set; }

@@ -31,11 +31,11 @@ namespace WA.Services
         {
             try
             {
-                await _dbContext.AddAsync<EmployeeEntity>(user);
+                _dbContext.Employee.Add(user);
 
-                await _dbContext.SaveChangesAsync();
+                _dbContext.SaveChanges();
 
-                return user;
+                return await Task.FromResult(user);
             }
             catch (Exception)
             {

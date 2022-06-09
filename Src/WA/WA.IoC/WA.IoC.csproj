@@ -10,7 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WA.Common\WA.Common.csproj" />
     <ProjectReference Include="..\WA.Contracts\WA.Contracts.csproj" />
     <ProjectReference Include="..\WA.Infrastructure\WA.Infrastructure.csproj" />
     <ProjectReference Include="..\WA.Services\WA.Services.csproj" />

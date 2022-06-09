@@ -21,5 +21,7 @@ namespace WA.Data.DbCtx
         public DbSet<SkillEntity> Skill { get; set; }
 
         public DbSet<User> User { get; set; }
+
+        public DbSet<ProjectLocationsEntity>ProjectLocations { get; set; }
     }
 }
