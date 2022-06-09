@@ -7,7 +7,6 @@ using WA.Contracts;
 using WA.Data.DbCtx;
 using WA.Data.Dtos;
 using WA.Data.Entities;
-using WA.Data.Helpers;
 
 namespace WA.Services
 {
@@ -48,12 +47,18 @@ namespace WA.Services
             }
         }
 
+        public async Task<IEnumerable<ProjectEmployeeDto>> GetProjectEmployees()
+        {
+            var unmappedProjects = await GetInternalList();
+
+            return _projectMapping.Map(unmappedProjects.ToList());
+        }
+
         public async Task<IEnumerable<ProjectEmployeeDto>> GetAll()
         {
             var unmappedProjects = await GetInternalList();
 
             return _projectMapping.Map(unmappedProjects.ToList());
-            
         }
 
         #endregion
