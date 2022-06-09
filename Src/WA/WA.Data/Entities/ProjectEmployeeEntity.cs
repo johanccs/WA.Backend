@@ -1,9 +1,9 @@
-﻿namespace WA.Data.Entities
-{
-    public class ProjectEmployeeEntity
-    {
-        public int id { get; set; }
+﻿using WA.Data.Base;
 
+namespace WA.Data.Entities
+{
+    public class ProjectEmployeeEntity: BaseEntity
+    {
         public int ProjectID { get; set; }
 
         public int EmployeeID { get; set; }

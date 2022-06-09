@@ -21,10 +21,12 @@ namespace WA.LocationConsole
         static async Task Main(string[] args)
         {
             Output.GetStartConfirmation();
+            Output.PrintWaitStatement();
 
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", true, true);
+
             var config = builder.Build();
             _connString = config.GetConnectionString("sqlConnection");
 

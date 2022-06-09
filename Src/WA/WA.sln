@@ -45,10 +45,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WA.ProjectLocationConsole",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WA.ProjectLocationConsole", "WA.LocationConsole\WA.ProjectLocationConsole.csproj", "{C579B2A7-DDDF-44FA-8A75-0D0AB8A2BD93}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WA.BulkProjectLocationConsole", "WA.BulkProjectLocationConsole", "{50154C6F-0F3B-4F31-BEC0-EC54AE9C6FF3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WA.BulkProjectLocationConsole", "WA.BulkProjectLocationConsole\WA.BulkProjectLocationConsole.csproj", "{F41D183D-7A73-486A-8A6E-54FE782FF509}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,10 +91,6 @@ Global
 		{C579B2A7-DDDF-44FA-8A75-0D0AB8A2BD93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C579B2A7-DDDF-44FA-8A75-0D0AB8A2BD93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C579B2A7-DDDF-44FA-8A75-0D0AB8A2BD93}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F41D183D-7A73-486A-8A6E-54FE782FF509}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F41D183D-7A73-486A-8A6E-54FE782FF509}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F41D183D-7A73-486A-8A6E-54FE782FF509}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F41D183D-7A73-486A-8A6E-54FE782FF509}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -117,8 +109,6 @@ Global
 		{554E82DF-04A5-4E58-8AAD-532208D85DAE} = {104D8DBC-4A9D-48F5-89BA-618CAED87335}
 		{3699A193-2668-4D51-86FC-9A294D326162} = {4B8A0EB0-8F24-4398-A7C6-7378779D0E03}
 		{C579B2A7-DDDF-44FA-8A75-0D0AB8A2BD93} = {3699A193-2668-4D51-86FC-9A294D326162}
-		{50154C6F-0F3B-4F31-BEC0-EC54AE9C6FF3} = {4B8A0EB0-8F24-4398-A7C6-7378779D0E03}
-		{F41D183D-7A73-486A-8A6E-54FE782FF509} = {50154C6F-0F3B-4F31-BEC0-EC54AE9C6FF3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B2928C8A-53C1-40E9-96EF-E4323D2EC3E8}

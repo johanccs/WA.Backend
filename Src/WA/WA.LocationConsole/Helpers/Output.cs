@@ -15,9 +15,16 @@ namespace WA.LocationConsole.Helpers
                 Environment.Exit(0);
         }
 
+        public static void PrintWaitStatement()
+        {
+            Console.WriteLine("");
+            Console.WriteLine("Bulk insert in progress. Please wait...");
+            Console.WriteLine("");
+        }
+
         public static void WriteFooter(Stopwatch sw, RawProjectLocation result)
         {
-            Console.WriteLine($"Bulk Insert completed: {result.Data.Count} Record(s) in {sw.Elapsed / 1000} second(s)");
+            Console.WriteLine($"Bulk Insert completed: {result.Data.Count} Record(s) in {sw.ElapsedMilliseconds / 1000.00} second(s)");
             Console.WriteLine("Press any key to exit");
             Console.ReadKey();
         }

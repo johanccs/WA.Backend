@@ -1,15 +1,13 @@
 ﻿
 using System;
 using System.ComponentModel.DataAnnotations;
+using WA.Data.Base;
 using WA.Data.CustomValidations;
 
 namespace WA.Data.Entities
 {
-    public class EmployeeEntity
+    public class EmployeeEntity:BaseEntity
     {
-        [Key]
-        public int Id { get; set; }
-
         [Required(ErrorMessage = "The field with name {0} is required")]
         [StringLength(15, ErrorMessage = "Invalid name length")]
         [FirstLetterUppercase]

@@ -17,7 +17,7 @@ namespace WA.Infrastructure.Logging
             logger.Error(message);
         }
 
-        public void LoginIngo(string message)
+        public void LogInfo(string message)
         {
             logger.Info(message);
         }

@@ -1,8 +1,9 @@
-﻿namespace WA.Data.Entities
+﻿using WA.Data.Base;
+
+namespace WA.Data.Entities
 {
-    public class User
+    public class User: BaseEntity
     {
-		public int id { get; set; }
 		public string Name { get; set; }
 		public string Surname { get; set; }
 		public string Username { get; set; }

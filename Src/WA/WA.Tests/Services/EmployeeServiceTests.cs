@@ -12,7 +12,7 @@ namespace BE.Tests.Services
        
         public EmployeeServiceTests()
         {
-            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseInMemoryDatabase("MockBETS")
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>().UseInMemoryDatabase("MockWA")
                 .Options;
 
             _dbContext = new ApplicationDbContext(options);

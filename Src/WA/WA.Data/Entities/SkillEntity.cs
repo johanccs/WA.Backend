@@ -1,8 +1,9 @@
-﻿namespace WA.Data.Entities
+﻿using WA.Data.Base;
+
+namespace WA.Data.Entities
 {
-    public class SkillEntity
+    public class SkillEntity: BaseEntity
     {
-        public int id { get; set; }
         public string Name { get; set; }
     }
 }

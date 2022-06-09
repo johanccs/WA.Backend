@@ -48,11 +48,6 @@ namespace WA.Services
             return await _dbContext.Employee.AsNoTracking().ToListAsync();
         }
 
-        public async Task<EmployeeEntity> GetUser(int id)
-        {
-            return await _dbContext.Employee.FirstAsync(x => x.Id == id);
-        }
-
         #endregion
     }
 }
