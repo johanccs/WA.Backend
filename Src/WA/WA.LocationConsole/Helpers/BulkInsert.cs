@@ -3,12 +3,30 @@ using System;
 using System.Data;
 using System.Threading.Tasks;
 using WA.Data.Entities;
+using WA.LocationConsole.Helpers;
 
 namespace WA.ProjectLocationConsole.Helpers
 {
     public static class BulkInsert
     {
-        public static async Task<bool> WriteToServerAsync(RawProjectLocation rawLocation, string connString)
+        public static async Task<RawProjectLocation> Run(string connString)
+        {
+            var result = await GetProjectLocationsAsync();
+
+            await WriteToServerAsync(result, connString);
+            return result;
+        }
+
+        private async static Task<RawProjectLocation> GetProjectLocationsAsync()
+        {
+            var serializer = new DeSerializer();
+
+            var result = await serializer.DeSerialize();
+
+            return result;
+        }
+
+        private static async Task<bool> WriteToServerAsync(RawProjectLocation rawLocation, string connString)
         {
             if (string.IsNullOrEmpty(connString))
                 throw new ArgumentNullException(nameof(connString));
@@ -27,7 +45,7 @@ namespace WA.ProjectLocationConsole.Helpers
             return true;
         }
     
-        public static async Task<DataTable> CopyToTable(RawProjectLocation projectLocation)
+        private static async Task<DataTable> CopyToTable(RawProjectLocation projectLocation)
         {
             DataTable dt = new DataTable();
             dt.Clear();

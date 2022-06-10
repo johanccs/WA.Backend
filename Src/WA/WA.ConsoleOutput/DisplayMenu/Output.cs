@@ -10,7 +10,6 @@ namespace WA.ConsoleOutput.DisplayMenu
             Console.WriteLine(" Please select an action from the menu");
             Console.WriteLine(" -------------------------------------");
             Console.WriteLine(" 1. Add new Employee");
-            Console.WriteLine(" 2. Display employees");
             Console.WriteLine("");
             Console.WriteLine(" 0 - Exit");
             Console.WriteLine("");

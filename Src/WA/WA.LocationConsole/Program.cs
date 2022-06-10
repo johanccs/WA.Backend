@@ -39,20 +39,9 @@ namespace WA.LocationConsole
             var sw = new Stopwatch();
             sw.Start();
 
-            var result = await GetProjectLocationsAsync();
-
-            await BulkInsert.WriteToServerAsync(result, _connString);
+            RawProjectLocation result = await BulkInsert.Run(_connString);
 
             Output.WriteFooter(sw, result);
-        }
-
-        private async static Task<RawProjectLocation> GetProjectLocationsAsync()
-        {
-            var serializer = new DeSerializer();
-
-            var result = await serializer.DeSerialize();
-
-            return result;
         }
     }
 }
